@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb://ferreira:Kfp_2008@localhost:27017/iotPlatformdb"
+    "mongoURI":"mongodb://ferreira:Kfp_2008@localhost:27017/iotPlatformdb",
+    "jwtSecret":"Ferreira1921"
 }
