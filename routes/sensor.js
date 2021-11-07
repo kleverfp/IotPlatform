@@ -95,7 +95,21 @@ router.get('/gateway/:gatewayId',async (req,res)=>{
         console.log(err.message);
         res.status(500).json({msg:'server error'});
     }
-})
+});
+
+router.delete('/:sensorId',auth,async (req,res)=>{
+    try {
+        const sensor = await Sensor.findOneAndRemove({sensorId:req.params.sensorId});
+        if(!sensor)
+            return res.status(400).json({msg:'sensor not found'});
+
+        res.json(sensor);
+        
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({msg:'server error'});
+    }
+});
 
 
 module.exports = router;
